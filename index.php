@@ -43082,8 +43082,9 @@ function get_web_page( $url )
                     foreach($dom->find('title') as $element){
                       
                         if(trim($element->text()) == 'Du söker för snabbt  - Merinfo.se'){
-                            echo ($key+1)."-Limit";
+                            echo ($key+1)."-Limit ";
                             sleep(30);
+                            getData($number,$key);
                         }
                     }
                      
