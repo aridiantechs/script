@@ -43,9 +43,9 @@ function get_web_page( $url )
             CURLOPT_MAXREDIRS      => 10,       // stop after 10 redirects
             // CURLOPT_PROXY          => '83.149.70.159',   
             // CURLOPT_PROXYPORT      => '13012',
-            CURLOPT_PROXY          => '5.61.58.211',   
-            CURLOPT_PROXYPORT      => '4314',
-            CURLOPT_HTTPPROXYTUNNEL=> 1,
+            // CURLOPT_PROXY          => '5.61.58.211',   
+            // CURLOPT_PROXYPORT      => '4314',
+            // CURLOPT_HTTPPROXYTUNNEL=> 1,
         );
 
         $ch      = curl_init( $url );
