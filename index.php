@@ -43048,7 +43048,8 @@ function get_web_page( $url )
             $result = get_web_page($url);
         
             // print_r($result['content']);
-           
+            print_r( $result );
+
             $html = $result['content'];
             $dom = str_get_html($html);
             
