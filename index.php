@@ -43041,7 +43041,7 @@ function get_web_page( $url )
 // 73497182
 ];
     
-    $found = 1;
+    
     foreach($numbers as $key => $number){
         
             
@@ -43055,8 +43055,7 @@ function get_web_page( $url )
     // echo json_encode($person_data);
     
     
-    
-    
+ 
     function getData($number,$key){
 
             $url = 'https://www.merinfo.se/search?who=0'.$number.'&where=';
@@ -43093,9 +43092,8 @@ function get_web_page( $url )
 
                         if(trim($element->text()) == 'Företag'){
 
-                            echo ' Found '.$found;
-
-                            $found++;
+                            echo ' Found ';
+ 
                             
                             $company_name = '';
                             
