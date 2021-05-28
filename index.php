@@ -43075,9 +43075,18 @@ function get_web_page( $url )
                 foreach($dom->find('.link-primary') as $element){
                     $page_links[] = $element->href;
                 }
-                print_r($html);
-                exit;
+                // print_r($html);
+                // exit;
                 if(empty($page_links)){
+
+                    
+                    foreach($dom->find('title') as $element){
+                      
+                        if(trim($element->text()) == 'Du söker för snabbt  - Merinfo.se'){
+                            echo ($key+1)."-Limit";
+                            sleep(30);
+                        }
+                    }
                      
                 }else{
                     foreach($dom->find('.btn-primary') as $element){
@@ -43101,9 +43110,9 @@ function get_web_page( $url )
                         }
                         
                     }
+                     echo ($key+1)." ";
                 }
                 
-                echo ($key+1)." ";
             }else{
                 getData($number,$key);
             }
