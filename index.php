@@ -43048,9 +43048,9 @@ function get_web_page( $url )
             $result = get_web_page($url);
         
             // print_r($result['content']);
-            print_r( $result );
-
+          
             $html = $result['content'];
+             print_r( $html );
             $dom = str_get_html($html);
             
             $page_links = [];
