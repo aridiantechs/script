@@ -43086,9 +43086,9 @@ function get_web_page( $url )
                                 echo ($key+1)."-Limit ";
                                 sleep(60);
                                 getData($number,$key);
+                            }else{
+                                echo $number.'-No-Found ';
                             }
-
-                            echo $number.'-No-Found ';
                         }
                     }else{
                         echo $number.'-No-Found ';
