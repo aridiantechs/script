@@ -43077,15 +43077,13 @@ function get_web_page( $url )
                 }
                 
                 if(empty($page_links)){
-                    
-                    
-                    
+                     
                 }else{
                     foreach($dom->find('.btn-primary') as $element){
 
                         if(trim($element->text()) == 'Företag'){
 
-                            echo $found;
+                            echo ' Found '.$found;
 
                             $found++;
                             
