@@ -43079,22 +43079,28 @@ function get_web_page( $url )
                 // exit;
                 if(empty($page_links)){
 
-                    
-                    foreach($dom->find('title') as $element){
+                    if($dom->find('title')){
+                        foreach($dom->find('title') as $element){
                       
-                        if(trim($element->text()) == 'Du söker för snabbt  - Merinfo.se'){
-                            echo ($key+1)."-Limit ";
-                            sleep(60);
-                            getData($number,$key);
+                            if(trim($element->text()) == 'Du söker för snabbt  - Merinfo.se'){
+                                echo ($key+1)."-Limit ";
+                                sleep(60);
+                                getData($number,$key);
+                            }
+
+                            echo $number.'-No-Found';
                         }
+                    }else{
+                        echo $number.'-No-Found';
+                        getData($number,$key);
                     }
-                     
+                    
                 }else{
                     foreach($dom->find('.btn-primary') as $element){
 
                         if(trim($element->text()) == 'Företag'){
 
-                            echo ' Found ';
+                            echo 'Found ';
  
                             $company_name = '';
                             
