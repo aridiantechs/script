@@ -43057,10 +43057,10 @@ function get_web_page( $url )
     
  
     function getData($number,$key){
-
+            sleep(1);
             $url = 'https://www.merinfo.se/search?who=0'.$number.'&where=';
             $result = get_web_page($url);
-        
+            
             // print_r($result['content']);
           
             $html = $result['content'];
