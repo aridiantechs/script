@@ -43104,7 +43104,7 @@ function get_web_page( $url )
                 
                 echo ($key+1)." ";
             }else{
-                getData($number);
+                getData($number,$key);
             }
 
     }
