@@ -43076,6 +43076,7 @@ function get_web_page( $url )
                     $page_links[] = $element->href;
                 }
                 print_r($html);
+                exit;
                 if(empty($page_links)){
                      
                 }else{
