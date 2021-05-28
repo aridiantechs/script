@@ -43043,59 +43043,70 @@ function get_web_page( $url )
     foreach($numbers as $key => $number){
         
             
-            $url = 'https://www.merinfo.se/search?who=0'.$number.'&where=';
+        getData($number);
             
-            $result = get_web_page($url);
-        
-            // print_r($result['content']);
-          
-            $html = $result['content'];
-             print_r( $html );
-            $dom = str_get_html($html);
-            
-            $page_links = [];
-            
-            foreach($dom->find('.link-primary') as $element){
-                $page_links[] = $element->href;
-            }
-            
-            if(empty($page_links)){
-                
-                
-                
-            }else{
-                foreach($dom->find('.btn-primary') as $element){
-
-                    if(trim($element->text()) == 'Företag'){
-
-                        echo $found;
-
-                        $found++;
-                        
-                        $company_name = '';
-                        
-                        foreach($dom->find('.link-primary') as $element){
-                            $company_name = $element->text();
-                        }
-                    
-                        $myfile = fopen("newfile.txt", "a") or die("Unable to open file!");
-                            $txt = '0' . $number .' - '. $company_name . "\n" ;
-                            fwrite($myfile, $txt);
-                            fclose($myfile);
-                    }
-                    
-                }
-            }
-            
-            echo ($key+1)." ";
            
     }
+
+
     
     // echo json_encode($person_data);
     
     
     
     
-    
+    function getData($number){
+
+            $url = 'https://www.merinfo.se/search?who=0'.$number.'&where=';
+            $result = get_web_page($url);
+        
+            // print_r($result['content']);
+          
+            $html = $result['content'];
+
+            if($html){
+
+                $dom = str_get_html($html);
+            
+                $page_links = [];
+                
+                foreach($dom->find('.link-primary') as $element){
+                    $page_links[] = $element->href;
+                }
+                
+                if(empty($page_links)){
+                    
+                    
+                    
+                }else{
+                    foreach($dom->find('.btn-primary') as $element){
+
+                        if(trim($element->text()) == 'Företag'){
+
+                            echo $found;
+
+                            $found++;
+                            
+                            $company_name = '';
+                            
+                            foreach($dom->find('.link-primary') as $element){
+                                $company_name = $element->text();
+                            }
+                        
+                            $myfile = fopen("newfile.txt", "a") or die("Unable to open file!");
+                                $txt = '0' . $number .' - '. $company_name . "\n" ;
+                                fwrite($myfile, $txt);
+                                fclose($myfile);
+                        }
+                        
+                    }
+                }
+                
+                echo ($key+1)." ";
+            }else{
+                getData($number);
+            }
+
+    }
     
     
