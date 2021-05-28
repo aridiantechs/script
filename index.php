@@ -41,8 +41,10 @@ function get_web_page( $url )
             CURLOPT_CONNECTTIMEOUT => 120,      // timeout on connect
             CURLOPT_TIMEOUT        => 120,      // timeout on response
             CURLOPT_MAXREDIRS      => 10,       // stop after 10 redirects
-            CURLOPT_PROXY          => '83.149.70.159',       // stop after 10 redirects
-            CURLOPT_PROXYPORT      => '13012',
+            // CURLOPT_PROXY          => '83.149.70.159',   
+            // CURLOPT_PROXYPORT      => '13012',
+            CURLOPT_PROXY          => '5.61.58.211',   
+            CURLOPT_PROXYPORT      => '4314',
             CURLOPT_HTTPPROXYTUNNEL=> 1,
         );
 
