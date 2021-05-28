@@ -12579,7 +12579,7 @@ function get_web_page( $url )
                 }
             }
             
-            echo $key+1." ";
+            echo ($key+1)." ";
            
     }
     
