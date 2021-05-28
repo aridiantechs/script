@@ -43088,10 +43088,10 @@ function get_web_page( $url )
                                 getData($number,$key);
                             }
 
-                            echo $number.'-No-Found';
+                            echo $number.'-No-Found ';
                         }
                     }else{
-                        echo $number.'-No-Found';
+                        echo $number.'-No-Found ';
                         getData($number,$key);
                     }
                     
