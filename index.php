@@ -43075,7 +43075,7 @@ function get_web_page( $url )
                 foreach($dom->find('.link-primary') as $element){
                     $page_links[] = $element->href;
                 }
-                
+                print_r($html);
                 if(empty($page_links)){
                      
                 }else{
