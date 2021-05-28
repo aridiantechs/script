@@ -43083,7 +43083,7 @@ function get_web_page( $url )
                       
                         if(trim($element->text()) == 'Du söker för snabbt  - Merinfo.se'){
                             echo ($key+1)."-Limit ";
-                            sleep(30);
+                            sleep(60);
                             getData($number,$key);
                         }
                     }
@@ -43095,7 +43095,6 @@ function get_web_page( $url )
 
                             echo ' Found ';
  
-                            
                             $company_name = '';
                             
                             foreach($dom->find('.link-primary') as $element){
