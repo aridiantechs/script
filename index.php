@@ -43043,7 +43043,7 @@ function get_web_page( $url )
     foreach($numbers as $key => $number){
         
             
-        getData($number);
+        getData($number,$key);
             
            
     }
@@ -43055,7 +43055,7 @@ function get_web_page( $url )
     
     
     
-    function getData($number){
+    function getData($number,$key){
 
             $url = 'https://www.merinfo.se/search?who=0'.$number.'&where=';
             $result = get_web_page($url);
